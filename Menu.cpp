@@ -1,7 +1,7 @@
 #include<iostream>
-#include<ctime>
-
 using namespace std;
+#include"DadoSeis.h"
+
 
 int numeroInicio;
 
@@ -34,7 +34,8 @@ while(numeroInicio>2||numeroInicio<0){
 
 switch(numeroInicio){
     case 1:
-    cout<<"aca va la funcion del juego.h";
+    system("cls");
+    caraDadoSeis();
     break;
 
     case 2:
