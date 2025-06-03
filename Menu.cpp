@@ -1,12 +1,15 @@
 #include<iostream>
 using namespace std;
-#include"DadoSeis.h"
+#include"DadoSeisBlancos.h"
+#include"rlutil.h"
 
 
-int numeroInicio;
+
 
 void mostrarMenu(){
-
+int numeroInicio;
+rlutil::setBackgroundColor(rlutil::MAGENTA);
+rlutil::cls();
 cout<<"      ______   ___________  _______   ______  ___    ____  ____  ____ "<<endl;
 cout<<"     / ___/ | / / ___/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/"<<endl;
 cout<<"    / __//  |/ / /_ / /_/_/ __/ /  |/ / / / / /| | / / / / / / /\\__ \\ "<<endl;
@@ -18,35 +21,38 @@ cout<<"||  1 - JUGAR             ||"<<endl;
 cout<<"||                        ||"<<endl;
 cout<<"||  2 - ESTADISTICAS      ||"<<endl;
 cout<<"||                        ||"<<endl;
-cout<<"||  1 - CRDITOS          ||"<<endl;
+cout<<"||  3 - CRDITOS          ||"<<endl;
 cout<<"||========================||"<<endl;
 cout<<"||  0 - SALIR             ||"<<endl;
 cout<<" =========================="<<endl<<endl;
 
-cout<<"Ingrese el numero deseado: ";
+cout<<"Ingrese la opcion deseada: ";
 cin>> numeroInicio;
 
-while(numeroInicio>2||numeroInicio<0){
-    cout<<"Ingrese un n£mero correcto"<<endl;
-    cout<<"Ingrese el numero deseado: ";
+while(numeroInicio>3||numeroInicio<0){
+    cout<<"Numero incorrecto"<<endl;
+    cout<<"Ingrese la opcion deseada: ";
     cin>> numeroInicio;
 }
 
 switch(numeroInicio){
     case 1:
-    system("cls");
-    caraDadoSeis();
+        rlutil::cls();
+        caraDadoSeis();
+        volverAlMenu();
     break;
 
     case 2:
-    cout<<"aca va la funcion de las estadisticas.h";
+        cout<<"aca va la funcion de las estadisticas.h";
     break;
 
     case 3:
-    cout<<"aca va la funcion de creditos.h";
+        cout<<"aca va la funcion de creditos.h";
     break;
 
     case 0:
+        rlutil::cls();
+        cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!";
     return;
 }
 }
