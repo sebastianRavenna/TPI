@@ -1,4 +1,4 @@
 #pragma once
 
-void caraDadoSeis();
+int jugadorA();
 void volverAlMenu();

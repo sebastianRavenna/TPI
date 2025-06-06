@@ -37,8 +37,9 @@ while(numeroInicio>3||numeroInicio<0){
 
 switch(numeroInicio){
     case 1:
+
         rlutil::cls();
-        caraDadoSeis();
+        jugadorA();
         volverAlMenu();
     break;
 
