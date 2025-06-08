@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#include"DadoSeisBlancos.h"
+#include"Juego.h"
 #include"rlutil.h"
 
 
@@ -39,7 +39,7 @@ switch(numeroInicio){
     case 1:
 
         rlutil::cls();
-        jugadorA();
+        juego();
         volverAlMenu();
     break;
 
