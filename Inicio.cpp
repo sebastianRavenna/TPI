@@ -14,6 +14,10 @@ using namespace std;
         sorteoInicial[1] = rand() % 6 + 1;
         cout <<jugadorA<< ": " << sorteoInicial[0] << "\t"<<jugadorB<< ": " << sorteoInicial[1]<< endl;
         cout << endl;
+        if(sorteoInicial[0]==sorteoInicial[1]){
+            cout<<"Hay empate"<<endl<<endl;
+
+        }
 
     } while (sorteoInicial[0]==sorteoInicial[1]);
 
@@ -21,7 +25,7 @@ using namespace std;
         cout<<jugadorA<<" gana el sorteo. \nApreta una tecla para iniciar el juego";
         rlutil::anykey();
     }else{
-    cout<<jugadorA<<" gana el sorteo. Apreta una tecla para iniciar el juego";
+        cout<<jugadorB<<" gana el sorteo. \nApreta una tecla para iniciar el juego";
         rlutil::anykey();
     }
 

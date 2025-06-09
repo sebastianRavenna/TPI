@@ -2,7 +2,7 @@
 using namespace std;
 #include"Juego.h"
 #include"rlutil.h"
-
+#include "volverAlMenu.h"
 
 
 
@@ -10,6 +10,9 @@ void mostrarMenu(){
 int numeroInicio;
 rlutil::setBackgroundColor(rlutil::MAGENTA);
 rlutil::cls();
+rlutil::setColor(rlutil::WHITE);
+
+
 cout<<"      ______   ___________  _______   ______  ___    ____  ____  ____ "<<endl;
 cout<<"     / ___/ | / / ___/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/"<<endl;
 cout<<"    / __//  |/ / /_ / /_/_/ __/ /  |/ / / / / /| | / / / / / / /\\__ \\ "<<endl;
@@ -44,15 +47,21 @@ switch(numeroInicio){
     break;
 
     case 2:
+        rlutil::cls();
         cout<<"aca va la funcion de las estadisticas.h";
+        volverAlMenu();
     break;
 
     case 3:
+        rlutil::cls();
         cout<<"aca va la funcion de creditos.h";
+        volverAlMenu();
     break;
 
     case 0:
         rlutil::cls();
+        cout<<"¨Estas seguro que queres salir del juego? Presiona ENTER para confirmar."<<endl;
+        rlutil::anykey();
         cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!";
     return;
 }
