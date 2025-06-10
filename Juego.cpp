@@ -4,8 +4,8 @@ using namespace std;
 #include"Menu.h"
 #include"Inicio.h"
 #include"rlutil.h"
-
-int juego(){
+#include"estadisticas.h"
+void juego(){
 string jugadorA, jugadorB, nombreJugador;
 
     cout<<"Ingresa el nombre del jugador A: ";
@@ -16,11 +16,15 @@ string jugadorA, jugadorB, nombreJugador;
 
     bool empiezaA = turnoInicial(jugadorA, jugadorB);
 
-    int stockDados;
+    int stockDados=1;
     int stockDadosA = 6;
     int stockDadosB = 6;
+    int puntajeTotalA=0;
+    int puntajeTotalB=0;
+    int ronda=0;
 
-    for (int ronda=1; ronda<7; ronda++){
+    while (ronda<6 && stockDadosA!=0 &&  stockDadosB!=0 ){
+            ronda++;
 
         int vecDadosElegidos[12]={};
 
@@ -29,11 +33,17 @@ string jugadorA, jugadorB, nombreJugador;
             rlutil::cls();
             stockDados = stockDadosA;
             nombreJugador = jugadorA;
+
+
+
+
         }else{
             rlutil::setBackgroundColor(rlutil::GREEN);
             rlutil::cls();
             stockDados = stockDadosB;
             nombreJugador = jugadorB;
+
+
         }
         cout<<"Turno de "<<nombreJugador<<endl;
         cout<<"Presiona una tecla para lanzar los dados que te indican el N£mero Objetivo "<<endl<<endl;
@@ -43,6 +53,7 @@ string jugadorA, jugadorB, nombreJugador;
         int dadosObjetivo[2]={};
         int numeroObjetivo=0;
         srand(time(0));
+
         for (int i=0;i<2;i++){
             dadosObjetivo[i] = rand() % 12 + 1;
             numeroObjetivo+=dadosObjetivo[i];
@@ -82,22 +93,26 @@ string jugadorA, jugadorB, nombreJugador;
 
 
         while(dadosElegidos!=0 && sumaSeleccionada<numeroObjetivo){
-            cout<<"Dado Nø ";
-            cin>>dadosElegidos;
+                cout<<"Dado Nø ";
+                cin>>dadosElegidos;
 
             if(dadosElegidos>=0 && dadosElegidos<=stockDados){
+
                 if(dadosElegidos!=0){
+
                     if(vecDadosElegidos[dadosElegidos-1]==0){
                         sumaSeleccionada += dados[dadosElegidos-1];
                         cantDadosElegidos++;
                         vecDadosElegidos[dadosElegidos-1]=dados[dadosElegidos-1];
+
                     }else{
-                    cout<<"Ya elegiste este dado, selecciona otro"<<endl;
+                            cout<<endl;
+                            cout<<"Ya elegiste este dado, selecciona otro."<<endl;
                     }
 
                 }
 
-            }else{cout<<"Opcion incorrecta, ingresa un numero entre 1 y "<<stockDados<<" para seguir jugando, o 0 para rendirte."<<endl;
+            }else{cout<<"Opcion INCORRECTA, ingresa un numero entre 1 y "<<stockDados<<" para seguir jugando, o 0 para rendirte."<<endl;
             }
 
             cout<<"cant de dados: "<<cantDadosElegidos<<endl;
@@ -111,11 +126,13 @@ string jugadorA, jugadorB, nombreJugador;
         cout<<"La suma total de los dados elegidos es de "<<sumaSeleccionada<<endl;
 
         if(sumaSeleccionada==numeroObjetivo){
-            cout<<"Lograste igualar el N£mero Objetivo, tu puntaje en esta ronda es "<<puntajeRonda<<" y le pasas "<<cantDadosElegidos<<" dados a tu rival"<<endl;
+            cout<<"Lograste igualar el N£mero Objetivo, tu puntaje en esta ronda es "<<puntajeRonda<<" y le pasas "<<cantDadosElegidos<<" dados a tu rival."<<endl;
+            cout<<endl;
         }else{
-            cout<<"No lograste el N£mero Objetivo, recibis 1 dado de tu rival"<<endl;
+            cout<<"No lograste el N£mero Objetivo, recibis 1 dado de tu rival."<<endl;
+            puntajeRonda=0;
 
-            if(empiezaA  && stockDadosB!=1 || !empiezaA && stockDadosA!=1){
+            if((empiezaA && stockDadosB!=1) || (!empiezaA && stockDadosA!=1)){
                 cantDadosElegidos=-1;
             }else{cantDadosElegidos=0;
             }
@@ -131,21 +148,67 @@ string jugadorA, jugadorB, nombreJugador;
 
         if(empiezaA){
             empiezaA=false;
-            cout<<"Ahora le toca a: "<<jugadorB<<endl;
-            cout<<"Presiona una tecla para continuar"<<endl;
-            rlutil::anykey();
+
             stockDadosA-=cantDadosElegidos;
             stockDadosB+=cantDadosElegidos;
+            puntajeTotalA+=puntajeRonda;
+            cout<<endl;
+
+            cout<<"Presiona una tecla para continuar."<<endl;
+            rlutil::anykey();
+
+            rlutil::setBackgroundColor(rlutil::BLUE);
+            rlutil::cls();
+
+            if(cantDadosElegidos==-1){
+                cantDadosElegidos=0;}
+
+            cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dados a tu rival"<<endl<<endl;
+            cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
+            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalA<<endl<<endl;
+            cout<<"Presiona una tecla para continuar."<<endl<<endl;
+            rlutil::anykey();
+
+
 
         }else{
             empiezaA=true;
-            cout<<"Ahora le toca a: "<<jugadorA<<endl;
-            cout<<"Presiona una tecla para continuar"<<endl;
-            rlutil::anykey();
+
+
             stockDadosB-=cantDadosElegidos;
             stockDadosA+=cantDadosElegidos;
+            puntajeTotalB+=puntajeRonda;
+
+            cout<<"Presiona una tecla para continuar."<<endl;
+            rlutil::anykey();
+
+            rlutil::setBackgroundColor(rlutil::GREEN);
+            rlutil::cls();
+
+            if(cantDadosElegidos==-1){
+                cantDadosElegidos=0;}
+
+            cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dados a tu rival"<<endl<<endl;
+            cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
+            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalB<<endl<<endl;
+            cout<<"Presiona una tecla para continuar."<<endl<<endl;
+            rlutil::anykey();
+
+
+
         }
 }
+
+
+rlutil::cls();
+
+
+            if(puntajeTotalA>puntajeTotalB){
+
+                cout<<"jugadorA gano el juego"<<endl;
+            }else {
+                cout<<"jugadorB gano el juego"<<endl;
+            }
 }
 
 

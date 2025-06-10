@@ -2,6 +2,7 @@
 using namespace std;
 #include"Juego.h"
 #include"rlutil.h"
+#include  "creditos.h"
 #include "volverAlMenu.h"
 
 
@@ -48,21 +49,22 @@ switch(numeroInicio){
 
     case 2:
         rlutil::cls();
-        cout<<"aca va la funcion de las estadisticas.h";
+        cout<<"estadisticas.h";
         volverAlMenu();
     break;
 
     case 3:
         rlutil::cls();
-        cout<<"aca va la funcion de creditos.h";
+        creditos();
         volverAlMenu();
     break;
 
     case 0:
         rlutil::cls();
-        cout<<"¨Estas seguro que queres salir del juego? Presiona ENTER para confirmar."<<endl;
+        cout<<"¨Estas seguro que queres salir del juego?"<<endl<<endl;
+        volverAlMenu();
         rlutil::anykey();
-        cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!";
+
     return;
 }
 }
