@@ -2,9 +2,9 @@
 using namespace std;
 #include"Juego.h"
 #include"rlutil.h"
-#include  "creditos.h"
-#include "volverAlMenu.h"
-
+#include"creditos.h"
+#include"volverAlMenu.h"
+#include"estadisticas.h"
 
 
 void mostrarMenu(){
@@ -49,7 +49,7 @@ switch(numeroInicio){
 
     case 2:
         rlutil::cls();
-        cout<<"estadisticas.h";
+        //estadisticas();
         volverAlMenu();
     break;
 

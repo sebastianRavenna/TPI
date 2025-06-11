@@ -15,6 +15,7 @@ string jugadorA, jugadorB, nombreJugador;
     cin>>jugadorB;
 
     bool empiezaA = turnoInicial(jugadorA, jugadorB);
+    bool primeraPartida=false;
 
     int stockDados=1;
     int stockDadosA = 6;
@@ -55,7 +56,7 @@ string jugadorA, jugadorB, nombreJugador;
         srand(time(0));
 
         for (int i=0;i<2;i++){
-            dadosObjetivo[i] = rand() % 12 + 1;
+            dadosObjetivo[i] = rand()%12+1;
             numeroObjetivo+=dadosObjetivo[i];
         }
 
@@ -75,7 +76,7 @@ string jugadorA, jugadorB, nombreJugador;
         cout<<"Stock de dados: "<<stockDados<<endl;
 
         for (int i=0;i<stockDados;i++){
-            dados[i] = rand() % 6 + 1;
+            dados[i] = rand()%6+1;
             cout<<" "<<dados[i]<<"\t";
         }
         cout<<endl;
@@ -162,7 +163,9 @@ string jugadorA, jugadorB, nombreJugador;
 
             if(cantDadosElegidos==-1){
                 cantDadosElegidos=0;}
-
+            if(stockDadosA==0){
+                puntajeTotalA+=10000;
+                cout<<"Ganaste 10000 puntos por quedarte sin dados"<<endl<<endl;}
             cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dados a tu rival"<<endl<<endl;
             cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
             cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalA<<endl<<endl;
@@ -188,6 +191,9 @@ string jugadorA, jugadorB, nombreJugador;
             if(cantDadosElegidos==-1){
                 cantDadosElegidos=0;}
 
+            if(stockDadosB==0){
+                puntajeTotalB+=10000;
+                cout<<"Ganaste 10000 puntos por quedarte sin dados"<<endl<<endl;}
             cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dados a tu rival"<<endl<<endl;
             cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
             cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalB<<endl<<endl;
@@ -200,15 +206,50 @@ string jugadorA, jugadorB, nombreJugador;
 }
 
 
-rlutil::cls();
-
+            rlutil::setBackgroundColor(rlutil::MAGENTA);
+            rlutil::cls();
 
             if(puntajeTotalA>puntajeTotalB){
 
-                cout<<"jugadorA gano el juego"<<endl;
-            }else {
-                cout<<"jugadorB gano el juego"<<endl;
+                cout<<jugadorA<<" gano el juego con "<<puntajeTotalA<<" puntos"<<endl;
+
+            }else if(puntajeTotalA<puntajeTotalB){
+
+                cout<<jugadorB<<" gano el juego con "<<puntajeTotalB<<" puntos"<<endl<<endl;
+
+            }else{
+                cout<<"Hubo empate entre el jugador "<<jugadorA<<" y el jugador "<<jugadorB<<" con "<<puntajeTotalA<<" puntos."<<endl<<endl;
             }
+
+            cout<<"Presiona una tecla para continuar."<<endl<<endl;
+            rlutil::anykey();
+
+
+    if(!primeraPartida){
+
+        primeraPartida=true;
+    }
+
 }
 
+/*void estadisticas(int puntajeTotalA,int puntajeTotalB, string jugadorA, string jugadorB,bool primeraPartida){
 
+            rlutil::cls();
+
+    if(primeraPartida){
+
+
+
+    if (puntajeTotalA==puntajeTotalB){
+        cout<<"Hubo un empate entre los jugadores."<<endl;
+
+            }else if(puntajeTotalA>puntajeTotalB){
+                    puntajeMax=puntajeTotalA;
+                    cout<<jugadorA<<" gano el juego"<<"con "<<puntajeTotalA<<" puntos"<<endl;
+
+            }else {
+                    puntajeMax=puntajeTotalB;
+                    cout<<jugadorB<<" gano el juego"<<"con "<<puntajeTotalB<<" puntos"<<endl;
+            }}
+
+            }*/
