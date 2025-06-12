@@ -1,2 +1,5 @@
-#pragma  once
-void estadisticas(int puntajeTotalA,int puntajeTotalB);
+#pragma once
+void estadisticas(int, int, string, string,bool);
+
+
+
