@@ -18,7 +18,7 @@ void juego()
     cin>>jugadorB;
 
     bool empiezaA = turnoInicial(jugadorA, jugadorB);
-    bool blanco = true;
+    bool blanco;
     ///bool primeraPartida=false;
 
     int stockDados=1;
@@ -40,7 +40,7 @@ void juego()
             rlutil::cls();
             stockDados = stockDadosA;
             nombreJugador = jugadorA;
-
+            blanco = true;
         }
         else
         {
@@ -48,7 +48,7 @@ void juego()
             rlutil::cls();
             stockDados = stockDadosB;
             nombreJugador = jugadorB;
-
+            blanco = false;
         }
 
         cout<<"Numero de ronda: "<<(ronda+1)/2<<endl;
@@ -69,14 +69,14 @@ void juego()
         cout<<"Los dados objetivos son: \nDado 1: "<<dadosObjetivo[0]<<"\t"<<"Dado 2: " <<dadosObjetivo[1]<<endl;
         cout<<"Tu NUMERO OBJETIVO es: "<<numeroObjetivo<<endl;
         cout<<endl;
-        cout<<"Presiona una tecla para lanzar los dados en tu stock: "<<endl;
+        cout<<"Tu stock de dados es de: "<<stockDados<<endl;
 
+        cout<<"Presiona una tecla para lanzar tus dados: "<<endl;
         rlutil::anykey();
 
         int dados[12]= {};
         int dadosElegidos=-1, sumaSeleccionada=0, cantDadosElegidos=0, puntajeRonda=0;
 
-        cout<<"Stock de dados: "<<stockDados<<endl;
 
         rlutil::saveDefaultColor();
         for (int i=0;i<stockDados;i++){
@@ -165,6 +165,7 @@ void juego()
         if(empiezaA)
         {
             empiezaA=false;
+            blanco = false;
  ///              6      -      (-1)=  7
             stockDadosA-=cantDadosElegidos;
  ///              6     +       (-1)=  5
@@ -195,11 +196,11 @@ void juego()
             rlutil::anykey();
 
 
-
         }
         else
         {
             empiezaA=true;
+            blanco = true;
 
 
             stockDadosB-=cantDadosElegidos;

@@ -19,7 +19,11 @@ using namespace std;
         rlutil::resetColor();
         if (i==0){
             cout <<jugadorA;
-        }else cout <<jugadorB;
+            blanco=false;
+        }else {
+            cout <<jugadorB;
+             blanco=true;
+        }
         }
         //cout <<jugadorA<< ": " << dadoInicial[0] << "\t"<<jugadorB<< ": " << sorteoInicial[1]<< endl;
         cout << endl<<endl;
