@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 using namespace std;
 #include"Menu.h"
 
@@ -7,6 +8,7 @@ using namespace std;
 
 int main()
 {
+    srand(time(0));
     mostrarMenu();
     return 0;
 }

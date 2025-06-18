@@ -1,5 +1,7 @@
 #include <iostream>
-#include "Menu.h"
+#include"Menu.h"
+#include"rlutil.h"
+#include"volverAlMenu.h"
 using namespace std;
 
 void volverAlMenu(){
@@ -18,11 +20,28 @@ void volverAlMenu(){
         }
     switch (volverAtras){
                 case 1:
-                    system("cls");
+                    rlutil::cls();
                     mostrarMenu();
                     break;
                 case 0:
+                    confirmar();
                     cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
                     break;
             }
+}
+
+void confirmar()
+{
+    int finalizar;
+    cout<<"¨Estas seguro que queres salir del juego?"<<endl<<"1.Si\t2.No"<<endl;
+    cin>>finalizar;
+    switch (finalizar-1){
+    case 1:
+        system("cls");
+        mostrarMenu();
+        break;
+    case 0:
+        cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
+        break;
+    }
 }
