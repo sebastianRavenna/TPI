@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
+	<iostream>
+	<ctime>
+	"Dados.h"
+	"rlutil.h"
+
+1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
+
+1750362853 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
+	<iostream>
+	<ctime>
+	"Menu.h"
+	"Inicio.h"
+	"rlutil.h"
+	"estadisticas.h"
+	"Dados.h"
+
+1750358222 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.h
+
+1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.h
+
+1750354169 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.h
+	<string>
+
+1750358231 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
+	<iostream>
+	<ctime>
+	"string"
+	"Menu.h"
+
+1750361729 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+	<iostream>
+	"Juego.h"
+	"rlutil.h"
+	"creditos.h"
+	"volverAlMenu.h"
+	"estadisticas.h"
+	"Dados.h"
+
+1750360251 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.h
+	"string"
+
+1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.h
+
+1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
+
+1750361497 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
+	<iostream>
+	"Menu.h"
+	"rlutil.h"
+	"volverAlMenu.h"
+
+1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.cpp
+	"rlutil.h"
+	<iostream>
+	"Dados.h"
+
+1750357857 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.cpp
+	<iostream>
+	"rlutil.h"
+	"string"
+

@@ -21,7 +21,6 @@ void volverAlMenu(){
     switch (volverAtras){
                 case 1:
                     rlutil::cls();
-                    mostrarMenu();
                     break;
                 case 0:
                     confirmar();
@@ -37,8 +36,7 @@ void confirmar()
     cin>>finalizar;
     switch (finalizar-1){
     case 1:
-        system("cls");
-        mostrarMenu();
+        rlutil::cls();
         break;
     case 0:
         cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;

@@ -1,3 +1,5 @@
 #pragma once
+#include"string"
+using namespace std;
 void volverAlMenu();
-int juego();
+void juego(int &record, string &ganadorRecord);

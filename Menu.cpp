@@ -8,9 +8,13 @@ using namespace std;
 #include"Dados.h"
 
 
+
 void mostrarMenu()
-{
+{   string ganadorRecord="";
+    int record=0;
     int numeroInicio;
+
+    do {
     rlutil::setBackgroundColor(rlutil::MAGENTA);
     rlutil::cls();
 
@@ -81,19 +85,22 @@ void mostrarMenu()
         cin>> numeroInicio;
     }
 
+
     switch(numeroInicio)
     {
     case 1:
 
         rlutil::cls();
-        juego();
+        juego(record, ganadorRecord);
         volverAlMenu();
         break;
 
     case 2:
+
         rlutil::cls();
-        //estadisticas();
+        estadisticas(record, ganadorRecord);
         volverAlMenu();
+
         break;
 
     case 3:
@@ -106,10 +113,12 @@ void mostrarMenu()
         rlutil::cls();
         cout<<"¨Estas seguro que queres salir del juego?"<<endl<<endl;
         confirmar();
-        rlutil::anykey();
+        volverAlMenu();
 
         return;
     }
+
+    } while (numeroInicio != 0);
 }
 
 

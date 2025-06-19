@@ -7,9 +7,9 @@ using namespace std;
 #include"estadisticas.h"
 #include"Dados.h"
 
-void juego()
+void juego(int &record, string &ganadorRecord)
 {
-    string jugadorA, jugadorB, nombreJugador;
+    string jugadorA, jugadorB, nombreJugador, ganador;
 
     cout<<"Ingresa el nombre del jugador A: ";
     cin>>jugadorA;
@@ -19,13 +19,10 @@ void juego()
 
     bool empiezaA = turnoInicial(jugadorA, jugadorB);
     bool blanco;
-    ///bool primeraPartida=false;
-
+    int puntajeGanador=0;
     int stockDados=1;
-    int stockDadosA = 6;
-    int stockDadosB = 6;
-    int puntajeTotalA=0;
-    int puntajeTotalB=0;
+    int stockDadosA = 6,stockDadosB = 6;
+    int puntajeTotalA=0,puntajeTotalB=0;
     int ronda=0;
 
     while (ronda<6 && stockDadosA!=0 && stockDadosB!=0 )
@@ -76,11 +73,12 @@ void juego()
 
         int dados[12]= {};
         int dadosElegidos=-1, sumaSeleccionada=0, cantDadosElegidos=0, puntajeRonda=0;
-
+        int sumaMaxima=0;
 
         rlutil::saveDefaultColor();
         for (int i=0;i<stockDados;i++){
-            dados[i] = rand()%6+1;
+            dados[i]=rand()%6+1;
+            sumaMaxima+=dados[i];
             dibujarDado(dados[i], i*9+3, 14, blanco);
             rlutil::locate(i*9+5, 17);
             if (empiezaA){
@@ -93,7 +91,12 @@ void juego()
         }
         cout<<endl<<endl;
 
-        cout<<"Selecciona los dados que quer‚s sumar, si crees que no podes lograr la suma presiona 0"<<endl;
+        if (sumaMaxima<numeroObjetivo) {
+
+            cout << "No es posible alcanzar el n£mero objetivo con los dados actuales."<<endl<<endl;
+            cout << "Perd‚s esta ronda autom ticamente."<<endl<<endl;}
+
+        else{cout<<"Selecciona los dados que quer‚s sumar, si crees que no podes lograr la suma presiona 0"<<endl;
         cout<<endl;
 
         while(dadosElegidos!=0 && sumaSeleccionada<numeroObjetivo)
@@ -131,7 +134,7 @@ void juego()
             cout<<"cant de dados: "<<cantDadosElegidos<<endl;
             cout<<"suma seleccionada: "<<sumaSeleccionada<<endl;
             cout<<endl;
-        }
+        }}
 
 
         puntajeRonda = sumaSeleccionada*cantDadosElegidos;
@@ -243,48 +246,35 @@ void juego()
     {
 
         cout<<jugadorA<<" gano el juego con "<<puntajeTotalA<<" puntos"<<endl;
-
+        ganador=jugadorA;
+        puntajeGanador=puntajeTotalA;
     }
     else if(puntajeTotalA<puntajeTotalB)
     {
 
         cout<<jugadorB<<" gano el juego con "<<puntajeTotalB<<" puntos"<<endl<<endl;
-
+        ganador=jugadorB;
+        puntajeGanador=puntajeTotalB;
     }
     else
     {
         cout<<"Hubo empate entre el jugador "<<jugadorA<<" y el jugador "<<jugadorB<<" con "<<puntajeTotalA<<" puntos."<<endl<<endl;
+        ganador=jugadorA;
+        puntajeGanador=puntajeTotalA;
+
     }
 
-    cout<<"Presiona una tecla para continuar."<<endl<<endl;
-    rlutil::anykey();
+    if(puntajeGanador>record){
+        record=puntajeGanador;
+        ganadorRecord=ganador;
+    }
 
 
-    //if(!primeraPartida){
 
-    // primeraPartida=true;
-    //}
+     cout<<"Ingrese una tecla para vovler al menu"<<endl;
+        rlutil::anykey();
+        rlutil::cls();
 
 }
 
-/*void estadisticas(int puntajeTotalA,int puntajeTotalB, string jugadorA, string jugadorB,bool primeraPartida){
 
-            rlutil::cls();
-
-    if(primeraPartida){
-
-
-
-    if (puntajeTotalA==puntajeTotalB){
-        cout<<"Hubo un empate entre los jugadores."<<endl;
-
-            }else if(puntajeTotalA>puntajeTotalB){
-                    puntajeMax=puntajeTotalA;
-                    cout<<jugadorA<<" gano el juego"<<"con "<<puntajeTotalA<<" puntos"<<endl;
-
-            }else {
-                    puntajeMax=puntajeTotalB;
-                    cout<<jugadorB<<" gano el juego"<<"con "<<puntajeTotalB<<" puntos"<<endl;
-            }}
-
-            }*/

@@ -1,5 +1,7 @@
 #pragma once
-void estadisticas(int, int, string, string,bool);
+#include<string>
+using namespace std;
 
+void estadisticas(int record,string ganador);
 
 

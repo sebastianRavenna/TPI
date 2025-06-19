@@ -1,16 +1,17 @@
-#include <iostream>
-#include "rlutil.h"
+#include<iostream>
+#include"rlutil.h"
+#include"string"
 using namespace std;
 
-void estadisticas(int puntajeTotalA,int puntajeTotalB){
+void estadisticas(int record, string ganador){
 
-            rlutil::cls();
-            if(puntajeTotalA>puntajeTotalB){
 
-                cout<<"jugadorA gano el juego"<<endl;
-            }else {
-                cout<<"jugadorB gano el juego"<<endl;
-            }
+    cout<<"El record es del jugador "<<ganador<<" con un puntaje de: "<<record;
 
+
+
+
+    cout << "\nPresiona una tecla para continuar..." << endl;
+    rlutil::anykey();
 
 }
