@@ -6,9 +6,12 @@ using namespace std;
 void estadisticas(int record, string ganador){
 
 
-    cout<<"El record es del jugador "<<ganador<<" con un puntaje de: "<<record;
 
 
+    if(ganador==""){
+            cout<<"No hay datos cargados todavia.";
+
+    }else{cout<<"El record es del jugador "<<ganador<<" con un puntaje de: "<<record;}
 
 
     cout << "\nPresiona una tecla para continuar..." << endl;
