@@ -5,7 +5,7 @@
 using namespace std;
 
 void volverAlMenu(){
-    int volverAtras=-1;
+    int numeroInicio, volverAtras=-1;
     cout<<"Presione 1 para volver al Men£ principal"<<endl<<endl;
     cout<<"Presione 0 para salir del Juego"<<endl<<endl;
     cout<<"Numero Elegido: ";
@@ -23,13 +23,13 @@ void volverAlMenu(){
                     rlutil::cls();
                     break;
                 case 0:
-                    confirmar();
+                    confirmar(numeroInicio);
                     cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
                     break;
             }
 }
 
-void confirmar(int numeroInicio)
+void confirmar(int &numeroInicio)
 {
     int finalizar;
     cout<<"¨Estas seguro que queres salir del juego?"<<endl<<"1.Si\t2.No"<<endl;
@@ -38,11 +38,10 @@ void confirmar(int numeroInicio)
     case 1:
         rlutil::cls();
         cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
-        return;
+        break;
     case 2:
         rlutil::cls();
         numeroInicio=-1;
-
         break;
     }
 }

@@ -1,4 +1,4 @@
 #pragma once
 
 void volverAlMenu();
-void confirmar();
+void confirmar(int &numeroInicio);

@@ -208,6 +208,14 @@ void juego(int &record, string &ganadorRecord)
 
             if(sumaSeleccionada==numeroObjetivo){
 
+                for(int i=0; i<12; i++){
+                    if (vecDadosElegidos[i]!=0){
+                        dibujarDado(vecDadosElegidos[i], i*9+3, 4, blanco);
+                    }
+                }
+                cout<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::BLUE);
+
                 if(cantDadosElegidos==1){
                     cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dado a tu rival"<<endl<<endl;
 
@@ -268,6 +276,15 @@ void juego(int &record, string &ganadorRecord)
             cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;
 
             if(sumaSeleccionada==numeroObjetivo){
+
+                for(int i=0; i<12; i++){
+                    if (vecDadosElegidos[i]!=0){
+                        dibujarDado(vecDadosElegidos[i], i*9+3, 4, blanco);
+                    }
+                }
+                cout<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::GREEN);
+                rlutil::setColor(rlutil::WHITE);
 
                 if(cantDadosElegidos==1){
                     cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dado a tu rival"<<endl<<endl;
