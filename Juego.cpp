@@ -58,7 +58,7 @@ void juego(int &record, string &ganadorRecord)
 
         for (int i=0; i<2; i++)
         {
-            dadosObjetivo[i] =5;
+            dadosObjetivo[i] = rand()%12+1;
             numeroObjetivo+=dadosObjetivo[i];
         }
 
@@ -76,7 +76,7 @@ void juego(int &record, string &ganadorRecord)
 
         rlutil::saveDefaultColor();
         for (int i=0;i<stockDados;i++){
-            dados[i]=2;
+            dados[i]= rand()%6+1;
             sumaMaxima+=dados[i];
             dibujarDado(dados[i], i*9+3, 16, blanco);
             rlutil::locate(i*9+5, 19);
@@ -208,13 +208,17 @@ void juego(int &record, string &ganadorRecord)
 
             if(sumaSeleccionada==numeroObjetivo){
 
+                int cont = 0;
                 for(int i=0; i<12; i++){
                     if (vecDadosElegidos[i]!=0){
-                        dibujarDado(vecDadosElegidos[i], i*9+3, 4, blanco);
+                        dibujarDado(vecDadosElegidos[i], cont*9+3, 4, blanco);
+                        rlutil::locate(cont*9+5, 7);
+                        rlutil::setBackgroundColor(rlutil::BLUE);
+                        cout<<"("<<i+1<<")"<<"\t";
+                        cont++;
                     }
                 }
                 cout<<endl<<endl;
-                rlutil::setBackgroundColor(rlutil::BLUE);
 
                 if(cantDadosElegidos==1){
                     cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dado a tu rival"<<endl<<endl;
@@ -277,14 +281,18 @@ void juego(int &record, string &ganadorRecord)
 
             if(sumaSeleccionada==numeroObjetivo){
 
+                int cont = 0;
                 for(int i=0; i<12; i++){
                     if (vecDadosElegidos[i]!=0){
-                        dibujarDado(vecDadosElegidos[i], i*9+3, 4, blanco);
+                        dibujarDado(vecDadosElegidos[i], cont*9+3, 4, blanco);
+                        rlutil::locate(cont*9+5, 7);
+                        rlutil::setBackgroundColor(rlutil::GREEN);
+                        rlutil::setColor(rlutil::WHITE);
+                        cout<<"("<<i+1<<")"<<"\t";
+                        cont++;
                     }
                 }
                 cout<<endl<<endl;
-                rlutil::setBackgroundColor(rlutil::GREEN);
-                rlutil::setColor(rlutil::WHITE);
 
                 if(cantDadosElegidos==1){
                     cout<<"En esta ronda le pasaste "<<cantDadosElegidos<<" dado a tu rival"<<endl<<endl;
