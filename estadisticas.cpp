@@ -14,8 +14,9 @@ void estadisticas(int record, string ganador){
     }else{cout<<"El record es del jugador "<<ganador<<" con un puntaje de: "<<record<<endl;
     }
 
+    cout<<endl<<endl;
 
-    cout << "\nPresiona una tecla para continuar..." << endl<<endl;
+    /*cout << "\nPresiona una tecla para continuar..." << endl<<endl;
     rlutil::anykey();
-    rlutil::cls();
+    rlutil::cls();*/
 }

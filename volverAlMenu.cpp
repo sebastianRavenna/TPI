@@ -5,28 +5,17 @@
 using namespace std;
 
 void volverAlMenu(){
-    int numeroInicio, volverAtras=-1;
-    cout<<"Presione 1 para volver al Men£ principal"<<endl<<endl;
-    cout<<"Presione 0 para salir del Juego"<<endl<<endl;
+//    int numeroInicio, volverAtras=-1;
+    /*cout<<"Presione 1 para volver al Men£ principal"<<endl<<endl;
     cout<<"Numero Elegido: ";
     cin>>volverAtras;
-    cout<<endl;
-        while(volverAtras<0||volverAtras>1){
-            cout<<"Numero Incorrecto: "<<endl<<endl;
-            cout<<"Presione 1 para volver al Men£ principal"<<endl<<endl;
-            cout<<"Presione 0 para salir del Juego"<<endl<<endl;
-            cout<<"Numero Elegido: ";
-            cin>>volverAtras;
-        }
-    switch (volverAtras){
-                case 1:
-                    rlutil::cls();
-                    break;
-                case 0:
-                    confirmar(numeroInicio);
-                    cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
-                    break;
-            }
+    cout<<endl;*/
+    //rlutil::cls();
+
+    cout<<"Presione una tecla para volver al Men£ principal"<<endl<<endl;
+    rlutil::anykey();
+
+
 }
 
 void confirmar(int &numeroInicio)

@@ -19,6 +19,4 @@ void creditos(){
         rlutil::setColor(rlutil::WHITE);
         cout<<endl<<endl;
 
-cout<<endl<<endl;
-
 }
