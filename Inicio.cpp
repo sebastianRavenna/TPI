@@ -14,8 +14,8 @@ using namespace std;
         rlutil::saveDefaultColor();
         for (int i=0;i<2;i++){
         sorteoInicial[i] = rand() % 6 + 1;
-        dibujarDado(sorteoInicial[i], i*20+5, 5, blanco);
-        rlutil::locate(i*20+5, 8);
+        dibujarDado(sorteoInicial[i], i*20+5, 6, blanco);
+        rlutil::locate(i*20+5, 9);
         rlutil::resetColor();
         if (i==0){
             cout <<jugadorA;
@@ -25,7 +25,6 @@ using namespace std;
              blanco=true;
         }
         }
-        //cout <<jugadorA<< ": " << dadoInicial[0] << "\t"<<jugadorB<< ": " << sorteoInicial[1]<< endl;
         cout << endl<<endl;
         if(sorteoInicial[0]==sorteoInicial[1]){
             cout<<"Hay empate"<<endl<<endl;
@@ -35,12 +34,12 @@ using namespace std;
 
     } while (sorteoInicial[0]==sorteoInicial[1]);
 
-    rlutil::locate(10,10);
+    rlutil::locate(10,11);
     if(sorteoInicial[0]>sorteoInicial[1]){
-        cout<<jugadorA<<" gana el sorteo. \n\n\nApreta una tecla para iniciar el juego";
+        cout<<"нн"<<jugadorA<<" GANA EL SORTEO!! \n\nApreta una tecla para iniciar el juego";
         rlutil::anykey();
     }else{
-        cout<<jugadorB<<" gana el sorteo. \n\n\nApreta una tecla para iniciar el juego";
+        cout<<"нн"<<jugadorB<<" GANA EL SORTEO!! \n\nApreta una tecla para iniciar el juego";
         rlutil::anykey();
     }
 

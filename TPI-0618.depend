@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
+1750875068 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
 	<iostream>
 	"rlutil.h"
 
@@ -17,7 +17,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
+1750876770 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
 	<iostream>
 	<ctime>
 	"Dados.h"
@@ -25,7 +25,7 @@
 
 1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
 
-1750362853 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
+1750886648 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
 	<iostream>
 	<ctime>
 	"Menu.h"
@@ -47,7 +47,7 @@
 	"string"
 	"Menu.h"
 
-1750361729 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+1750888518 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
 	<iostream>
 	"Juego.h"
 	"rlutil.h"
@@ -63,7 +63,7 @@
 
 1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
 
-1750361497 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
+1750888203 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
 	<iostream>
 	"Menu.h"
 	"rlutil.h"
@@ -74,7 +74,7 @@
 	<iostream>
 	"Dados.h"
 
-1750357857 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.cpp
+1750886742 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.cpp
 	<iostream>
 	"rlutil.h"
 	"string"

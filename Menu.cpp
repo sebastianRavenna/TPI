@@ -18,20 +18,20 @@ void mostrarMenu()
     rlutil::setBackgroundColor(rlutil::MAGENTA);
     rlutil::cls();
 
-    for(int i=0; i<30; i++)
+    /*for(int i=0; i<30; i++)
     {
         if(i%3==0)
-        {
+        {   rlutil::hidecursor();
             rlutil::setBackgroundColor(rlutil::YELLOW);
             rlutil::setColor(rlutil::RED);
         }
         else if ((i-1)%3==0)
-        {
+        {   rlutil::hidecursor();
             rlutil::setBackgroundColor(rlutil::MAGENTA);
             rlutil::setColor(rlutil::WHITE);
         }
         else
-        {
+        {   rlutil::hidecursor();
             rlutil::setBackgroundColor(rlutil::WHITE);
             rlutil::setColor(rlutil::BLACK);
         }
@@ -50,7 +50,7 @@ void mostrarMenu()
         cout<<"                                                                        "<<endl;
 
         rlutil::msleep(i*5);
-    }
+    }*/
 
     bool blanco=true;
     for (int i=1; i<=6; i++){
@@ -111,11 +111,8 @@ void mostrarMenu()
 
     case 0:
         rlutil::cls();
-        cout<<"¨Estas seguro que queres salir del juego?"<<endl<<endl;
-        confirmar();
-        volverAlMenu();
-
-        return;
+        confirmar(numeroInicio);
+        break;
     }
 
     } while (numeroInicio != 0);

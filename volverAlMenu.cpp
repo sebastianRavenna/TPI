@@ -29,17 +29,20 @@ void volverAlMenu(){
             }
 }
 
-void confirmar()
+void confirmar(int numeroInicio)
 {
     int finalizar;
     cout<<"¨Estas seguro que queres salir del juego?"<<endl<<"1.Si\t2.No"<<endl;
     cin>>finalizar;
-    switch (finalizar-1){
+    switch (finalizar){
     case 1:
         rlutil::cls();
-        break;
-    case 0:
         cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
+        return;
+    case 2:
+        rlutil::cls();
+        numeroInicio=-1;
+
         break;
     }
 }
