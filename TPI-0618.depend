@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1750875068 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
+1750903046 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
 	<iostream>
 	"rlutil.h"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\rlutil.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -17,15 +17,141 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750876770 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
+1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
 	<iostream>
 	<ctime>
 	"Dados.h"
 	"rlutil.h"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
 
-1750886648 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
+1750910950 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
+	<iostream>
+	<ctime>
+	"Menu.h"
+	"Inicio.h"
+	"rlutil.h"
+	"estadisticas.h"
+	"Dados.h"
+	"ganaste.h"
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.h
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.h
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.h
+	<string>
+
+1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
+	<iostream>
+	<ctime>
+	"string"
+	"Menu.h"
+
+1750908774 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+	<iostream>
+	"Juego.h"
+	"rlutil.h"
+	"creditos.h"
+	"volverAlMenu.h"
+	"estadisticas.h"
+	"Dados.h"
+	"Reglamento.h"
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.h
+	"string"
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.h
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
+
+1750903526 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
+	<iostream>
+	"Menu.h"
+	"rlutil.h"
+	"volverAlMenu.h"
+
+1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.cpp
+	"rlutil.h"
+	<iostream>
+	"Dados.h"
+
+1750910888 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.cpp
+	<iostream>
+	"rlutil.h"
+	"string"
+
+1750894289 source:c:\programacion\tp final\tpi-main\creditos.cpp
+	<iostream>
+	"rlutil.h"
+
+1750894289 c:\programacion\tp final\tpi-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1750894289 source:c:\programacion\tp final\tpi-main\dados.cpp
+	"rlutil.h"
+	<iostream>
+	"Dados.h"
+
+1750894289 c:\programacion\tp final\tpi-main\dados.h
+
+1750894289 source:c:\programacion\tp final\tpi-main\estadisticas.cpp
+	<iostream>
+	"rlutil.h"
+	"string"
+
+1750894289 source:c:\programacion\tp final\tpi-main\inicio.cpp
+	<iostream>
+	<ctime>
+	"Dados.h"
+	"rlutil.h"
+
+1750894289 source:c:\programacion\tp final\tpi-main\main.cpp
+	<iostream>
+	<ctime>
+	"string"
+	"Menu.h"
+
+1750894289 c:\programacion\tp final\tpi-main\menu.h
+
+1750899148 source:c:\programacion\tp final\tpi-main\menu.cpp
+	<iostream>
+	"Juego.h"
+	"rlutil.h"
+	"creditos.h"
+	"volverAlMenu.h"
+	"estadisticas.h"
+	"Dados.h"
+	"Reglamento.h"
+
+1750894289 c:\programacion\tp final\tpi-main\juego.h
+	"string"
+
+1750894289 c:\programacion\tp final\tpi-main\creditos.h
+
+1750894289 c:\programacion\tp final\tpi-main\volveralmenu.h
+
+1750894289 c:\programacion\tp final\tpi-main\estadisticas.h
+	<string>
+
+1750895553 source:c:\programacion\tp final\tpi-main\volveralmenu.cpp
+	<iostream>
+	"Menu.h"
+	"rlutil.h"
+	"volverAlMenu.h"
+
+1750898243 source:c:\programacion\tp final\tpi-main\juego.cpp
 	<iostream>
 	<ctime>
 	"Menu.h"
@@ -34,48 +160,21 @@
 	"estadisticas.h"
 	"Dados.h"
 
-1750358222 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.h
+1750894289 c:\programacion\tp final\tpi-main\inicio.h
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.h
-
-1750354169 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.h
-	<string>
-
-1750358231 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
+1750899021 source:c:\programacion\tp final\tpi-main\reglamento.cpp
 	<iostream>
-	<ctime>
-	"string"
-	"Menu.h"
 
-1750888518 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+1750899925 c:\programacion\tp final\tpi-main\reglamento.h
+
+1750899925 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\reglamento.h
+
+1750902922 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\reglamento.cpp
 	<iostream>
-	"Juego.h"
-	"rlutil.h"
-	"creditos.h"
-	"volverAlMenu.h"
-	"estadisticas.h"
-	"Dados.h"
 
-1750360251 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.h
-	"string"
-
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.h
-
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
-
-1750888203 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
-	<iostream>
-	"Menu.h"
-	"rlutil.h"
-	"volverAlMenu.h"
-
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.cpp
-	"rlutil.h"
-	<iostream>
-	"Dados.h"
-
-1750886742 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.cpp
+1750909673 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\ganaste.cpp
 	<iostream>
 	"rlutil.h"
-	"string"
+
+1750909647 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\ganaste.h
 

@@ -6,6 +6,7 @@ using namespace std;
 #include"rlutil.h"
 #include"estadisticas.h"
 #include"Dados.h"
+#include"ganaste.h"
 
 void juego(int &record, string &ganadorRecord)
 {
@@ -38,6 +39,7 @@ void juego(int &record, string &ganadorRecord)
             stockDados = stockDadosA;
             nombreJugador = jugadorA;
             blanco = true;
+
         }
         else
         {
@@ -46,6 +48,7 @@ void juego(int &record, string &ganadorRecord)
             stockDados = stockDadosB;
             nombreJugador = jugadorB;
             blanco = false;
+
         }
 
         cout<<"Puntaje de "<<jugadorA<<": "<<puntajeTotalA<<"\t\t\t"<<"RONDA "<<(ronda+1)/2<<"\t\t\t"<<"Puntaje de "<<jugadorB<<": "<<puntajeTotalB<<endl<<endl;
@@ -58,12 +61,19 @@ void juego(int &record, string &ganadorRecord)
 
         for (int i=0; i<2; i++)
         {
-            dadosObjetivo[i] = rand()%12+1;
+            dadosObjetivo[i] =rand()%12+1;
             numeroObjetivo+=dadosObjetivo[i];
         }
 
         cout<<"Los dados objetivos son: \nDado (1): "<<dadosObjetivo[0]<<"\t"<<"Dado (2): " <<dadosObjetivo[1]<<endl<<endl;
+        rlutil::setBackgroundColor(rlutil::YELLOW);
+        rlutil::setColor(rlutil::BLACK);
         cout<<"Tu NUMERO OBJETIVO es: "<<numeroObjetivo<<endl;
+
+        if (empiezaA){
+            rlutil::setBackgroundColor(rlutil::BLUE);
+            }else rlutil::setBackgroundColor(rlutil::GREEN);
+            rlutil::setColor(rlutil::WHITE);
         cout<<endl;
         cout<<"Tu stock de dados es de: "<<stockDados<<endl<<endl;
 
@@ -76,7 +86,7 @@ void juego(int &record, string &ganadorRecord)
 
         rlutil::saveDefaultColor();
         for (int i=0;i<stockDados;i++){
-            dados[i]= rand()%6+1;
+            dados[i]=rand()%6+1;
             sumaMaxima+=dados[i];
             dibujarDado(dados[i], i*9+3, 16, blanco);
             rlutil::locate(i*9+5, 19);
@@ -138,12 +148,11 @@ void juego(int &record, string &ganadorRecord)
 
         if(sumaSeleccionada==numeroObjetivo)
         {
-            cout<<"Lograste igualar el NUMERO OBJETIVO"<<endl;
-            cout<<"La suma total de los dados elegidos es de "<<sumaSeleccionada<<endl;
+            cout<<"Lograste igualar el NUMERO OBJETIVO"<<endl<<endl;
         }
         else
         {
-            cout<<"No lograste el NUMERO OBJETIVO"<<endl;
+            cout<<"No lograste el NUMERO OBJETIVO"<<endl<<endl;
             puntajeRonda=0;
 
             if((empiezaA && stockDadosB!=1) || (!empiezaA && stockDadosA!=1))
@@ -169,12 +178,7 @@ void juego(int &record, string &ganadorRecord)
             blanco = false;
  ///              6      -      (-1)=  7
             stockDadosA-=cantDadosElegidos;
- ///              6     +       (-1)=  5
-
             puntajeTotalA+=puntajeRonda;
-
-            rlutil::saveDefaultColor();
-            rlutil::setBackgroundColor(rlutil::BLUE);
             rlutil::cls();
 
             if(stockDadosA==0){
@@ -184,11 +188,17 @@ void juego(int &record, string &ganadorRecord)
                     record=puntajeTotalA;
                     ganadorRecord=puntajeTotalA;
                     }
+                rlutil::setBackgroundColor(rlutil::BROWN);
+                cout<<"­­TIRADA EXITOSA!!"<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::BLUE);
                 cout<<"Obtenes 10000 puntos por quedarte sin dados"<<endl<<endl;
-                cout<<"­­GANASTE LA PARTIDA!!"<<endl<<endl;
+
+               ganaste();
+
+                rlutil::setBackgroundColor(rlutil::BLUE);
+                rlutil::setColor(rlutil::WHITE);
+                cout<<endl<<endl;
                 cout<<"Tu puntaje final es de "<<puntajeTotalA<<endl<<endl;
-                cout<<"Presiona una tecla para continuar."<<endl<<endl;
-                rlutil::anykey();
 
 
             }else{
@@ -196,23 +206,38 @@ void juego(int &record, string &ganadorRecord)
              if(puntajeRonda==0){
 
                 if(stockDadosB!=1){
-
-                    cout<<"Recibis 1 dado de tu rival."<<endl<<endl;}
+                    rlutil::setBackgroundColor(rlutil::RED);
+                    cout<<"­­TIRADA NO EXITOSA!!"<<endl<<endl;
+                    rlutil::setBackgroundColor(rlutil::BLUE);
+                    cout<<"Recibis 1 dado de tu rival."<<endl<<endl;
+                    cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;}
 
                 else{
-                    cout<<"Tu rival no puede pasarte el unico dado que le queda."<<endl<<endl;}}
-
+                    rlutil::setBackgroundColor(rlutil::RED);
+                    cout<<"­­TIRADA NO EXITOSA!!"<<endl<<endl;
+                    rlutil::setBackgroundColor(rlutil::BLUE);
+                    cout<<"Tu rival no puede pasarte el unico dado que le queda."<<endl<<endl;
+                    cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;}}
+///                   6     +       (-1)=  5
                     stockDadosB+=cantDadosElegidos;
 
-                    cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;
+
 
             if(sumaSeleccionada==numeroObjetivo){
+                rlutil::setBackgroundColor(rlutil::BROWN);
+                cout<<"­­TIRADA EXITOSA!!"<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::BLUE);
+            if(cantDadosElegidos==1){
+                cout<<"El dado que seleccionaste fue: "<<endl<<endl;
+            }else{
+                cout<<"Los dados que seleccionaste fueron: "<<endl<<endl;
+            }
 
                 int cont = 0;
                 for(int i=0; i<12; i++){
                     if (vecDadosElegidos[i]!=0){
-                        dibujarDado(vecDadosElegidos[i], cont*9+3, 4, blanco);
-                        rlutil::locate(cont*9+5, 7);
+                        dibujarDado(vecDadosElegidos[i], cont*9+3, 5, blanco);
+                        rlutil::locate(cont*9+5, 8);
                         rlutil::setBackgroundColor(rlutil::BLUE);
                         cout<<"("<<i+1<<")"<<"\t";
                         cont++;
@@ -229,7 +254,7 @@ void juego(int &record, string &ganadorRecord)
 
             }
             cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
-            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalA<<endl<<endl;
+            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalA<<endl<<endl<<endl;
             cout<<"Presiona una tecla para continuar."<<endl<<endl;
             rlutil::anykey();}
 
@@ -240,13 +265,9 @@ void juego(int &record, string &ganadorRecord)
             empiezaA=true;
             blanco = true;
 
-
-            stockDadosB-=cantDadosElegidos;
-
-            puntajeTotalB+=puntajeRonda;
-
             rlutil::saveDefaultColor();
-            rlutil::setBackgroundColor(rlutil::GREEN);
+            stockDadosB-=cantDadosElegidos;
+            puntajeTotalB+=puntajeRonda;
             rlutil::cls();
 
 
@@ -258,34 +279,52 @@ void juego(int &record, string &ganadorRecord)
                     record=puntajeTotalB;
                     ganadorRecord=jugadorB;
                 }
-
+                rlutil::setBackgroundColor(rlutil::CYAN);
+                cout<< "­­TIRADA EXITOSA!!"<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::GREEN);
                 cout<<"Obtenes 10000 puntos por quedarte sin dados"<<endl<<endl;
-                cout<<"­­GANASTE LA PARTIDA!!"<<endl<<endl;
+                ganaste();
+
+                rlutil::setBackgroundColor(rlutil::GREEN);
+                rlutil::setColor(rlutil::WHITE);
                 cout<<"Tu puntaje final es de "<<puntajeTotalB<<endl<<endl;
-                cout<<"Presiona una tecla para continuar."<<endl<<endl;
-                rlutil::anykey();
+
 
             }else{
             if(puntajeRonda==0){
 
                 if(stockDadosA!=1){
-
-                    cout<<"Recibis 1 dado de tu rival."<<endl<<endl;}
+                    rlutil::setBackgroundColor(rlutil::RED);
+                    cout<< "­­TIRADA NO EXITOSA!!"<<endl<<endl;
+                    rlutil::setBackgroundColor(rlutil::GREEN);
+                    cout<<"Recibis 1 dado de tu rival."<<endl<<endl;
+                    cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;}
 
                 else{
-                    cout<<"Tu rival no puede pasarte el unico dado que le queda."<<endl<<endl;}}
+                    rlutil::setBackgroundColor(rlutil::RED);
+                    cout<< "­­TIRADA NO EXITOSA!!"<<endl<<endl;
+                    rlutil::setBackgroundColor(rlutil::GREEN);
+                    cout<<"Tu rival no puede pasarte el unico dado que le queda."<<endl<<endl;
+                    cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;}}
 
                     stockDadosA+=cantDadosElegidos;
 
-            cout<<"Tu NUMERO OBJETIVO era "<<numeroObjetivo<<endl<<endl;
 
             if(sumaSeleccionada==numeroObjetivo){
+                rlutil::setBackgroundColor(rlutil::BROWN);
+                cout<< "­­TIRADA EXITOSA!!"<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::GREEN);
+                if(cantDadosElegidos==1){
+                    cout<<"El dado que seleccionaste fue: "<<endl<<endl;
+                    }else{
+                    cout<<"Los dados que seleccionaste fueron: "<<endl<<endl;
+            }
 
                 int cont = 0;
                 for(int i=0; i<12; i++){
                     if (vecDadosElegidos[i]!=0){
-                        dibujarDado(vecDadosElegidos[i], cont*9+3, 4, blanco);
-                        rlutil::locate(cont*9+5, 7);
+                        dibujarDado(vecDadosElegidos[i], cont*9+3, 5, blanco);
+                        rlutil::locate(cont*9+5, 8);
                         rlutil::setBackgroundColor(rlutil::GREEN);
                         rlutil::setColor(rlutil::WHITE);
                         cout<<"("<<i+1<<")"<<"\t";
@@ -303,7 +342,7 @@ void juego(int &record, string &ganadorRecord)
 
             }
             cout<<"Tu puntaje en esta ronda fue: "<<puntajeRonda<<endl<<endl;
-            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalB<<endl<<endl;
+            cout<<"Tu puntaje total hasta ahora es: "<<puntajeTotalB<<endl<<endl<<endl;
             cout<<"Presiona una tecla para continuar."<<endl<<endl;
             rlutil::anykey();}
 
@@ -313,28 +352,36 @@ void juego(int &record, string &ganadorRecord)
     }
 
 
-    rlutil::setBackgroundColor(rlutil::MAGENTA);
-    rlutil::cls();
 
     if(puntajeTotalA<10000 && puntajeTotalB<10000){
 
-        if(puntajeTotalA>puntajeTotalB)
-    {
+    rlutil::setBackgroundColor(rlutil::MAGENTA);
+    rlutil::cls();
 
-        cout<<jugadorA<<" gano el juego con "<<puntajeTotalA<<" puntos"<<endl;
+        if(puntajeTotalA>puntajeTotalB){
+        cout<<endl<<jugadorA<<" gan¢ el juego con "<<puntajeTotalA<<" puntos"<<endl<<endl;
+        ganaste();
+
+                rlutil::setBackgroundColor(rlutil::MAGENTA);
+                rlutil::setColor(rlutil::WHITE);
+        cout<<endl<<endl;
         ganador=jugadorA;
         puntajeGanador=puntajeTotalA;
     }
     else if(puntajeTotalA<puntajeTotalB)
     {
+        cout<<endl<<jugadorB<<" gan¢ el juego con "<<puntajeTotalB<<" puntos"<<endl<<endl;
+        ganaste();
 
-        cout<<jugadorB<<" gano el juego con "<<puntajeTotalB<<" puntos"<<endl<<endl;
+                rlutil::setBackgroundColor(rlutil::MAGENTA);
+                rlutil::setColor(rlutil::WHITE);
+        cout<<endl<<endl;
         ganador=jugadorB;
         puntajeGanador=puntajeTotalB;
     }
     else
-    {
-        cout<<"Hubo empate entre el jugador "<<jugadorA<<" y el jugador "<<jugadorB<<" con "<<puntajeTotalA<<" puntos."<<endl<<endl;
+    {   cout<<endl;
+        cout<<"Hubo empate entre "<<jugadorA<<" y "<<jugadorB<<" con "<<puntajeTotalA<<" puntos."<<endl<<endl;
         ganador=jugadorA;
         puntajeGanador=puntajeTotalA;
 
@@ -345,11 +392,6 @@ void juego(int &record, string &ganadorRecord)
         ganadorRecord=ganador;
     }
 
-
-
-     cout<<"Ingrese una tecla para vovler al menu"<<endl;
-        rlutil::anykey();
-        rlutil::cls();
 
 }}
 

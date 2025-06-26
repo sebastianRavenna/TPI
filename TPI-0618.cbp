@@ -41,9 +41,13 @@
 		<Unit filename="Juego.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
+		<Unit filename="Reglamento.cpp" />
+		<Unit filename="Reglamento.h" />
 		<Unit filename="creditos.h" />
 		<Unit filename="estadisticas.cpp" />
 		<Unit filename="estadisticas.h" />
+		<Unit filename="ganaste.cpp" />
+		<Unit filename="ganaste.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="volverAlMenu.cpp" />
 		<Unit filename="volverAlMenu.h" />

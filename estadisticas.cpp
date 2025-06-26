@@ -9,14 +9,12 @@ void estadisticas(int record, string ganador){
 
 
     if(ganador==""){
+            cout<<endl;
             cout<<"No hay datos cargados todavia."<<endl;
 
-    }else{cout<<"El record es del jugador "<<ganador<<" con un puntaje de: "<<record<<endl;
+    }else{cout<<endl<<"El record es de "<<ganador<<" con un puntaje de: "<<record<<endl;
     }
 
-    cout<<endl<<endl;
+    cout<<endl;
 
-    /*cout << "\nPresiona una tecla para continuar..." << endl<<endl;
-    rlutil::anykey();
-    rlutil::cls();*/
 }

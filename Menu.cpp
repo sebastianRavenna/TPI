@@ -6,6 +6,7 @@ using namespace std;
 #include"volverAlMenu.h"
 #include"estadisticas.h"
 #include"Dados.h"
+#include"Reglamento.h"
 
 
 
@@ -18,11 +19,11 @@ void mostrarMenu()
     rlutil::setBackgroundColor(rlutil::MAGENTA);
     rlutil::cls();
 
-    /*for(int i=0; i<30; i++)
+    for(int i=0; i<30; i++)
     {
         if(i%3==0)
         {   rlutil::hidecursor();
-            rlutil::setBackgroundColor(rlutil::YELLOW);
+            rlutil::setBackgroundColor(rlutil::WHITE);
             rlutil::setColor(rlutil::RED);
         }
         else if ((i-1)%3==0)
@@ -32,7 +33,7 @@ void mostrarMenu()
         }
         else
         {   rlutil::hidecursor();
-            rlutil::setBackgroundColor(rlutil::WHITE);
+            rlutil::setBackgroundColor(rlutil::YELLOW);
             rlutil::setColor(rlutil::BLACK);
         }
 
@@ -50,7 +51,7 @@ void mostrarMenu()
         cout<<"                                                                        "<<endl;
 
         rlutil::msleep(i*5);
-    }*/
+    }
 
     bool blanco=true;
     for (int i=1; i<=6; i++){
@@ -71,6 +72,8 @@ void mostrarMenu()
     cout<<"||  2 - ESTADISTICAS      ||"<<endl;
     cout<<"||                        ||"<<endl;
     cout<<"||  3 - CRDITOS          ||"<<endl;
+    cout<<"||                        ||"<<endl;
+    cout<<"||  4 - REGLAMENTO        ||"<<endl;
     cout<<"||========================||"<<endl;
     cout<<"||  0 - SALIR             ||"<<endl;
     cout<<" =========================="<<endl<<endl;
@@ -78,7 +81,7 @@ void mostrarMenu()
     cout<<"Ingrese la opcion deseada: ";
     cin>> numeroInicio;
 
-    while(numeroInicio>3||numeroInicio<0)
+    while(numeroInicio>4||numeroInicio<0)
     {
         cout<<"Numero incorrecto"<<endl;
         cout<<"Ingrese la opcion deseada: ";
@@ -108,6 +111,13 @@ void mostrarMenu()
         creditos();
         volverAlMenu();
         break;
+
+    case 4:
+        rlutil::cls();
+        reglamento();
+        volverAlMenu();
+        break;
+
 
     case 0:
         rlutil::cls();

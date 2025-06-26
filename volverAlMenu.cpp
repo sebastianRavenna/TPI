@@ -5,14 +5,8 @@
 using namespace std;
 
 void volverAlMenu(){
-//    int numeroInicio, volverAtras=-1;
-    /*cout<<"Presione 1 para volver al Men£ principal"<<endl<<endl;
-    cout<<"Numero Elegido: ";
-    cin>>volverAtras;
-    cout<<endl;*/
-    //rlutil::cls();
-
-    cout<<"Presione una tecla para volver al Men£ principal"<<endl<<endl;
+    cout<<endl;
+    cout<<"Presiona una tecla para volver al Men£ principal"<<endl<<endl;
     rlutil::anykey();
 
 
@@ -21,12 +15,18 @@ void volverAlMenu(){
 void confirmar(int &numeroInicio)
 {
     int finalizar;
-    cout<<"¨Estas seguro que queres salir del juego?"<<endl<<"1.Si\t2.No"<<endl;
+    cout<<endl;
+    cout<<"¨Estas seguro que queres salir del juego?"<<endl<<endl<<"\t1.Si\t\t2.No"<<endl<<endl;
+    cout<<"Numero elegido: ";
     cin>>finalizar;
+
     switch (finalizar){
     case 1:
         rlutil::cls();
-        cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl;
+        cout<<endl<<endl;
+        rlutil::setBackgroundColor(rlutil::GREEN);
+        cout<<"­GRACIAS POR HABER JUGADO ENFRENDADOS!"<<endl<<endl;
+        rlutil::setBackgroundColor(rlutil::MAGENTA);
         break;
     case 2:
         rlutil::cls();
