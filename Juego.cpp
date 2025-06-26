@@ -21,7 +21,7 @@ void juego(int &record, string &ganadorRecord)
     bool empiezaA = turnoInicial(jugadorA, jugadorB);
     bool blanco;
     int puntajeGanador=0;
-    int stockDados=1;
+    int stockDados;
     int stockDadosA = 6,stockDadosB = 6;
     int puntajeTotalA=0,puntajeTotalB=0;
     int ronda=0;
@@ -30,6 +30,7 @@ void juego(int &record, string &ganadorRecord)
     {
         ronda++;
 
+        ///valida para no elegir el mismo dado, y muestra los elegidos
         int vecDadosElegidos[12]={};
 
         if (empiezaA)
@@ -72,7 +73,7 @@ void juego(int &record, string &ganadorRecord)
 
         if (empiezaA){
             rlutil::setBackgroundColor(rlutil::BLUE);
-            }else rlutil::setBackgroundColor(rlutil::GREEN);
+            }else{rlutil::setBackgroundColor(rlutil::GREEN);}
             rlutil::setColor(rlutil::WHITE);
         cout<<endl;
         cout<<"Tu stock de dados es de: "<<stockDados<<endl<<endl;

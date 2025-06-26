@@ -7,63 +7,23 @@ using namespace std;
 #include"estadisticas.h"
 #include"Dados.h"
 #include"Reglamento.h"
+#include"titulo.h"
 
 
 
 void mostrarMenu()
-{   string ganadorRecord="";
+{   ///Variables de estadisticas, por  referencia
+    string ganadorRecord="";
     int record=0;
+
+
     int numeroInicio;
 
+    ///usamos do para que entre al menu directo, no forzar al numeroInicio
     do {
-    rlutil::setBackgroundColor(rlutil::MAGENTA);
-    rlutil::cls();
 
-    for(int i=0; i<30; i++)
-    {
-        if(i%3==0)
-        {   rlutil::hidecursor();
-            rlutil::setBackgroundColor(rlutil::WHITE);
-            rlutil::setColor(rlutil::RED);
-        }
-        else if ((i-1)%3==0)
-        {   rlutil::hidecursor();
-            rlutil::setBackgroundColor(rlutil::MAGENTA);
-            rlutil::setColor(rlutil::WHITE);
-        }
-        else
-        {   rlutil::hidecursor();
-            rlutil::setBackgroundColor(rlutil::YELLOW);
-            rlutil::setColor(rlutil::BLACK);
-        }
 
-        rlutil::locate(20,3);
-        cout<<"      ______   ___________  _______   ______  ___    ____  ____  ____   "<<endl;
-        rlutil::locate(20,4);
-        cout<<"     / ___/ | / / ___/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/  "<<endl;
-        rlutil::locate(20,5);
-        cout<<"    / __//  |/ / /_ / /_/_/ __/ /  |/ / / / / /| | / / / / / / /\\__ \\   "<<endl;
-        rlutil::locate(20,6);
-        cout<<"   / /__/ /|  / __// _  \\/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /   "<<endl;
-        rlutil::locate(20,7);
-        cout<<"  /____/_/ |_/_/  /_/ \\_/_____/_/ |_/_____/_/  |_/_____/\\____//____/    "<<endl;
-        rlutil::locate(20,8);
-        cout<<"                                                                        "<<endl;
-
-        rlutil::msleep(i*5);
-    }
-
-    bool blanco=true;
-    for (int i=1; i<=6; i++){
-        dibujarDado(i, i*9+20, 10, blanco);
-    }
-        int ubicacionDados=20;
-    for (int i=6; i>=1; i--){
-        dibujarDado(i, ubicacionDados+=9, 14, blanco=false);
-    }
-
-    rlutil::setBackgroundColor(rlutil::MAGENTA);
-    rlutil::setColor(rlutil::WHITE);
+    titulo();
 
     cout<<endl<<endl<<endl;
     cout<<" =========================="<<endl;
@@ -81,6 +41,7 @@ void mostrarMenu()
     cout<<"Ingrese la opcion deseada: ";
     cin>> numeroInicio;
 
+    ///while de validacion, no usamos default porque se reinicia
     while(numeroInicio>4||numeroInicio<0)
     {
         cout<<"Numero incorrecto"<<endl;
@@ -94,6 +55,7 @@ void mostrarMenu()
     case 1:
 
         rlutil::cls();
+        ///se trae por referencia  para usar en estadisticas
         juego(record, ganadorRecord);
         volverAlMenu();
         break;
@@ -101,6 +63,7 @@ void mostrarMenu()
     case 2:
 
         rlutil::cls();
+        ///se utiliza los argumentos por valor
         estadisticas(record, ganadorRecord);
         volverAlMenu();
 
@@ -121,10 +84,11 @@ void mostrarMenu()
 
     case 0:
         rlutil::cls();
+        ///se trae por referencia
         confirmar(numeroInicio);
         break;
     }
-
+        ///while que te saca del juego
     } while (numeroInicio != 0);
 }
 

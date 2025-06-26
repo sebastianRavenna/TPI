@@ -8,8 +8,8 @@ void dibujarDado(int numero, int posc, int posf, bool blanco)
     dibujarCuadrado(posc,posf, blanco);
 
     if(blanco){
-        rlutil::setColor(rlutil::BLACK);
         rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setColor(rlutil::BLACK);
     } else{
         rlutil::setBackgroundColor(rlutil::BLACK);
         rlutil::setColor(rlutil::WHITE);

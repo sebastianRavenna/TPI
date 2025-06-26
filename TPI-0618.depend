@@ -17,7 +17,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
+1750945786 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
 	<iostream>
 	<ctime>
 	"Dados.h"
@@ -25,7 +25,7 @@
 
 1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
 
-1750910950 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
+1750947285 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
 	<iostream>
 	<ctime>
 	"Menu.h"
@@ -42,13 +42,12 @@
 1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.h
 	<string>
 
-1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
+1750938918 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
 	<iostream>
 	<ctime>
-	"string"
 	"Menu.h"
 
-1750908774 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+1750941074 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
 	<iostream>
 	"Juego.h"
 	"rlutil.h"
@@ -57,6 +56,7 @@
 	"estadisticas.h"
 	"Dados.h"
 	"Reglamento.h"
+	"titulo.h"
 
 1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.h
 	"string"
@@ -65,13 +65,13 @@
 
 1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
 
-1750903526 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
+1750942004 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
 	<iostream>
 	"Menu.h"
 	"rlutil.h"
 	"volverAlMenu.h"
 
-1750894289 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.cpp
+1750943887 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.cpp
 	"rlutil.h"
 	<iostream>
 	"Dados.h"
@@ -169,7 +169,7 @@
 
 1750899925 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\reglamento.h
 
-1750902922 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\reglamento.cpp
+1750938988 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\reglamento.cpp
 	<iostream>
 
 1750909673 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\ganaste.cpp
@@ -177,4 +177,11 @@
 	"rlutil.h"
 
 1750909647 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\ganaste.h
+
+1750943101 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\titulo.cpp
+	<iostream>
+	"rlutil.h"
+	"Dados.h"
+
+1750939957 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\titulo.h
 

@@ -4,11 +4,11 @@ using namespace std;
 void reglamento(){
 
     cout << "REGLAMENTO DEL JUEGO: ENFRENDADOS"<<endl<<endl;
-    cout << "Enfrendados es un juego de dados para 2 jugadores, basado en el azar y las matematicas"<<endl<<endl;
-    cout << "El objetivo es sumar la mayor cantidad de puntos en 3 rondas, o ganar automaticamente si te quedas sin dados"<<endl<<endl;
+    cout << "Enfrendados es un juego de dados para 2 jugadores, basado en el azar y las matematicas."<<endl<<endl;
+    cout << "El objetivo es sumar la mayor cantidad de puntos en 3 rondas, o ganar automaticamente si te quedas sin dados."<<endl<<endl;
 
     cout << "DADOS:"<<endl;
-    cout << "Cada jugador comienza con 6 dados de 6 caras (dados stock)"<<endl;
+    cout << "Cada jugador comienza con 6 dados de 6 caras (dados stock)."<<endl;
     cout << "Ademas, se usan 2 dados de 12 caras que lanzan ambos jugadores entre rondas."<<endl<<endl;
 
     cout << "INICIO DEL JUEGO:"<<endl;

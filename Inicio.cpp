@@ -7,13 +7,15 @@ using namespace std;
  bool turnoInicial(string jugadorA, string jugadorB){
     int sorteoInicial[2]={};
     bool blanco=true;
+
+    ///forzamos al  sorteo y se repite en caso de empate
     do{
         rlutil::hidecursor();
         cout<<"Presiona una tecla para realizar el sorteo inicial"<<endl;
         rlutil::anykey();
         rlutil::saveDefaultColor();
         for (int i=0;i<2;i++){
-        sorteoInicial[i] = rand() % 6 + 1;
+        sorteoInicial[i] = rand()%6 + 1;
         dibujarDado(sorteoInicial[i], i*20+5, 6, blanco);
         rlutil::locate(i*20+5, 9);
         rlutil::resetColor();
@@ -27,7 +29,7 @@ using namespace std;
         }
         cout << endl<<endl;
         if(sorteoInicial[0]==sorteoInicial[1]){
-            cout<<"Hay empate"<<endl<<endl;
+            cout<<"Hay empate, vuelvan a tirar"<<endl<<endl;
             rlutil::anykey();
             rlutil::cls();
         }
