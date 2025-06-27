@@ -32,18 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Creditos.cpp" />
-		<Unit filename="Inicio.cpp" />
-		<Unit filename="Inicio.h" />
-		<Unit filename="Juego.cpp" />
-		<Unit filename="Juego.h" />
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
-		<Unit filename="creditos.h" />
-		<Unit filename="estadisticas.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="volverAlMenu.cpp" />
-		<Unit filename="volverAlMenu.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

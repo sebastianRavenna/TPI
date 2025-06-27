@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.cpp
+1750993140 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\creditos.cpp
 	<iostream>
 	"rlutil.h"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\rlutil.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -17,35 +17,43 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.cpp
+1750943887 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\dados.cpp
+	"rlutil.h"
+	<iostream>
+	"Dados.h"
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\dados.h
+
+1750992329 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\dadosobjetivos.cpp
+	"rlutil.h"
+	<iostream>
+	"DadosObjetivos.h"
+
+1750991480 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\dadosobjetivos.h
+
+1750993385 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\estadisticas.cpp
+	<iostream>
+	"rlutil.h"
+	"string"
+
+1750909673 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\ganaste.cpp
+	<iostream>
+	"rlutil.h"
+
+1750945786 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\inicio.cpp
 	<iostream>
 	<ctime>
 	"Dados.h"
 	"rlutil.h"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\dados.h
-
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.cpp
-	<iostream>
-	<ctime>
-	"Menu.h"
-	"Inicio.h"
-	"rlutil.h"
-	"estadisticas.h"
-	"Dados.h"
-
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.h
-
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\inicio.h
-
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\estadisticas.h
-
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\main.cpp
+1750938918 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\main.cpp
 	<iostream>
 	<ctime>
 	"Menu.h"
 
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\menu.cpp
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\menu.h
+
+1750991480 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\menu.cpp
 	<iostream>
 	"Juego.h"
 	"rlutil.h"
@@ -53,16 +61,49 @@
 	"volverAlMenu.h"
 	"estadisticas.h"
 	"Dados.h"
+	"Reglamento.h"
+	"titulo.h"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\juego.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\juego.h
+	"string"
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\creditos.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\creditos.h
 
-1750256855 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.h
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\volveralmenu.h
 
-1750256855 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi-main\volveralmenu.cpp
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\estadisticas.h
+	<string>
+
+1750899925 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\reglamento.h
+
+1750939957 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\titulo.h
+
+1750938988 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\reglamento.cpp
+	<iostream>
+
+1750993052 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\titulo.cpp
+	<iostream>
+	"rlutil.h"
+	"Dados.h"
+
+1750993448 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\volveralmenu.cpp
 	<iostream>
 	"Menu.h"
 	"rlutil.h"
 	"volverAlMenu.h"
+
+1750992244 source:c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\juego.cpp
+	<iostream>
+	<ctime>
+	"rlutil.h"
+	"Menu.h"
+	"Inicio.h"
+	"estadisticas.h"
+	"Dados.h"
+	"ganaste.h"
+	"DadosObjetivos.h"
+
+1750894289 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\inicio.h
+
+1750909647 c:\users\colla\onedrive\escritorio\prog\1er cuatri\prog\tpi\ganaste.h
 

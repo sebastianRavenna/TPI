@@ -8,24 +8,24 @@ void titulo(){
         rlutil::setBackgroundColor(rlutil::MAGENTA);
         rlutil::cls();
 
+        rlutil::hidecursor();
  for(int i=0; i<30; i++)
     {
         if(i%3==0)
-        {   rlutil::hidecursor();
+        {
             rlutil::setBackgroundColor(rlutil::WHITE);
             rlutil::setColor(rlutil::RED);
         }
         else if ((i-1)%3==0)
-        {   rlutil::hidecursor();
+        {
             rlutil::setBackgroundColor(rlutil::MAGENTA);
             rlutil::setColor(rlutil::WHITE);
         }
         else
-        {   rlutil::hidecursor();
+        {
             rlutil::setBackgroundColor(rlutil::YELLOW);
             rlutil::setColor(rlutil::BLACK);
         }
-
         rlutil::locate(20,3);
         cout<<"      ______   ___________  _______   ______  ___    ____  ____  ____   "<<endl;
         rlutil::locate(20,4);
@@ -44,13 +44,16 @@ void titulo(){
     }
 
     ///generacion de dados, argumentos por valores
+
+    int margen = 20;
     for (int i=1; i<=6; i++){
-        dibujarDado(i, i*9+20, 10, true);
+        dibujarDado(i, i*9+margen, 10, true);
     }
-        int ubicacionDados=20;
+        int ubicacionDados=margen;
     for (int i=6; i>=1; i--){
         dibujarDado(i, ubicacionDados+=9, 14, false);
     }
+
     rlutil::setBackgroundColor(rlutil::MAGENTA);
     rlutil::setColor(rlutil::WHITE);
 }

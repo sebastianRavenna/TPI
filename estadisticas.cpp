@@ -5,9 +5,6 @@ using namespace std;
 
 void estadisticas(int record, string ganador){
 
-
-
-
     if(ganador==""){
             cout<<endl;
             cout<<"No hay datos cargados todavia."<<endl;

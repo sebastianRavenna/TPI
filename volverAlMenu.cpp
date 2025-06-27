@@ -5,7 +5,6 @@
 using namespace std;
 
 void volverAlMenu(){
-    ///funcion para volver al menu
     cout<<endl;
     cout<<"Presiona una tecla para volver al Men£ principal"<<endl<<endl;
     rlutil::anykey();
